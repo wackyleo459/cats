@@ -1,15 +1,21 @@
 {
   "name": "cats",
   "version": "1.0.0",
-  "description": "create read update and delete cats",
-  "main": "index.js",
+  "description": "a CLI to create, read, update and delete cats database",
+  "main": "bin/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wackyleo459/cats.git"
   },
+  "bin": {
+    "cats": "./bin/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "cli"
+  ],
   "author": "Sue Ann Kim",
   "license": "ISC"
 }
