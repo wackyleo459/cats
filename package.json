@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "create read update and delete cats!",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wackyleo459/cats.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
