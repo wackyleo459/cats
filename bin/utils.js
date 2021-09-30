@@ -1,12 +1,5 @@
 const fs = require("fs");
 const catList = "./list.json";
-// const list = fs.readFile("./bin/list.json", "utf8", (err, data) => {
-//   if (err) {
-//     console.error(err);
-//     return;
-//   }
-//   console.log(JSON.parse(data));
-// });
 
 const utils = {
   readAll: function () {
@@ -20,15 +13,21 @@ const utils = {
     });
   },
 
-  add: function (name, color) {
+  add: function (name, color, info) {
     fs.readFile("./bin/list.json", (err, data) => {
       if (err) {
         console.error(err);
         return;
       }
       let list = JSON.parse(data);
-      console.log("reading", list);
+
       list[name] = { color: color };
+      if (info.weight) {
+        list[name].weight = Number(info.weight);
+      }
+      if (info.age) {
+        list[name].age = Number(info.age);
+      }
 
       fs.writeFile("./bin/list.json", JSON.stringify(list), (err, data1) => {
         if (err) {

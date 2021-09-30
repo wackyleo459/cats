@@ -11,9 +11,11 @@ program
   .command("add")
   .argument("<name>", "cat name")
   .argument("<color>", "color")
-  .action((name, color) => {
+  .option("-w, --weight <weight>", "cat's weight")
+  .option("-a, --age <age>", "cat's age")
+  .action((name, color, weight, age) => {
     console.log(`cat named ${name} added`);
-    utils.add(name, color);
+    utils.add(name, color, weight, age);
   });
 program
   .command("update")
