@@ -15,19 +15,23 @@ Make sure you have Node JS installed on your computer: https://nodejs.org/en/dow
 ```node
 cats read
 ``` 
-#### to add cat with its name, color and options age (-a) and/or weight (-w): cats add <name> <color> [options]
+#### to add cat with its name, color and options age (-a) and/or weight (-w): 
+ > cats add [name] [color] [options]
 ```node
 cats add Tabby black -a 4
 ```   
-#### to update a cat with options color, age and/or weight: update <name> [options]
+#### to update a cat with options color, age and/or weight:
+ > cats update [name] [options]
 ```node
 cats update Tabby -c pink -a 5 -w 8
 ```
-#### to delete a cat: delete <name> 
+#### to delete a cat: 
+ > cats delete [name] 
 ```node
 cats delete Tabby
 ```
-#### to display help for command: help [command]  
+#### to display help for command: 
+ > cats help [command]  
 ```node
 cats help add
 ```
