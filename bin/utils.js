@@ -29,7 +29,7 @@ const utils = {
         list[name].age = Number(info.age);
       }
 
-      fs.writeFile("./bin/list.json", JSON.stringify(list), (err, data1) => {
+      fs.writeFile("./bin/list.json", JSON.stringify(list), (err) => {
         if (err) {
           console.error(err);
           return;
@@ -59,7 +59,7 @@ const utils = {
         list[cat].age = Number(data.age);
       }
 
-      fs.writeFile("./bin/list.json", JSON.stringify(list), (err, data2) => {
+      fs.writeFile("./bin/list.json", JSON.stringify(list), (err) => {
         if (err) {
           console.error(err);
           return;
@@ -70,7 +70,24 @@ const utils = {
     });
   },
 
-  delete: function () {},
+  delete: function (name) {
+    fs.readFile("./bin/list.json", (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      let list = JSON.parse(data);
+      delete list[name];
+      fs.writeFile("./bin/list.json", JSON.stringify(list), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log(`deleted ${name} successfully`);
+        console.log("catsList", list);
+      });
+    });
+  },
 };
 
 module.exports = utils;
