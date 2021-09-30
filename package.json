@@ -19,6 +19,8 @@
   "author": "Sue Ann Kim",
   "license": "ISC",
   "dependencies": {
+    "commander": "^8.2.0",
+    "conf": "^10.0.3",
     "yargs": "^17.2.1"
   }
 }
